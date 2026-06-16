@@ -1,6 +1,9 @@
+import org.gradle.api.publish.maven.MavenPublication
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -30,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -40,4 +49,24 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.innovappsoft.KeyPayPaymentAndroidSDK"
+            artifactId = "keypay-payment-sdk"
+            version = "1.0.1"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+
+            pom {
+                name.set("KeyPay Payment Android SDK")
+                description.set("Official Android SDK for accepting KeyPay PaymentIntent payments from Kotlin or Java apps.")
+                url.set("https://github.com/innovappsoft/KeyPayPaymentAndroidSDK")
+            }
+        }
+    }
 }

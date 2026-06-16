@@ -23,7 +23,93 @@ The SDK gives developers a native checkout flow similar to the iOS `KeyPayPaymen
 
 ## Install
 
-For local development, add the module to your app:
+The SDK source lives on GitHub, but Android projects do not automatically consume GitHub source code as a Gradle dependency. Developers must use one of the installation modes below.
+
+### Option A — JitPack dependency
+
+Use this when you want Gradle to download the SDK from GitHub like a normal dependency.
+
+In your project `settings.gradle.kts`, add JitPack:
+
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+
+In `gradle/libs.versions.toml`:
+
+```toml
+[versions]
+keypaySdkVersion = "v1.0.1"
+
+[libraries]
+keypay-android-sdk = { module = "com.github.innovappsoft.KeyPayPaymentAndroidSDK:keypay-payment-sdk", version.ref = "keypaySdkVersion" }
+```
+
+In your app module `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation(libs.keypay.android.sdk)
+}
+```
+
+Then run **Sync Now**, **Clean Project** and **Rebuild Project**.
+
+> Important: use `v1.0.1` or newer. `v1.0.0` was a source-only GitHub release and did not include the Maven publishing metadata needed by JitPack.
+
+### Option B — Local AAR for testing
+
+Use this when testing locally before publishing or when JitPack is still building the release.
+
+Build the SDK AAR from this repository:
+
+```bash
+JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew :keypay-payment-sdk:assembleRelease
+```
+
+Copy the generated file into your app:
+
+```text
+keypay-payment-sdk/build/outputs/aar/keypay-payment-sdk-release.aar
+```
+
+to:
+
+```text
+your-app/app/libs/keypay-payment-sdk-release.aar
+```
+
+In your app module `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation(files("libs/keypay-payment-sdk-release.aar"))
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+}
+```
+
+The `appcompat` and `material` lines are required because local AAR files do not automatically bring all transitive dependencies.
+
+### Option C — Local module development
+
+Use this only when you are actively editing the SDK and the app at the same time.
+
+In your app project `settings.gradle.kts`:
+
+```kotlin
+include(":keypay-payment-sdk")
+project(":keypay-payment-sdk").projectDir = file("../KeyPayPaymentAndroidSDK/keypay-payment-sdk")
+```
+
+In your app module `build.gradle.kts`:
 
 ```kotlin
 dependencies {
@@ -31,13 +117,14 @@ dependencies {
 }
 ```
 
-When published to Maven/JitPack later, developers will use a normal dependency like:
+If Gradle reports a plugin classpath conflict when using this mode, switch to Option A or Option B. Local module development can conflict when the host app and SDK project define plugin versions differently.
 
-```kotlin
-dependencies {
-    implementation("com.innovappsoft:keypay-payment-android-sdk:1.0.0")
-}
-```
+### Common install errors
+
+- `Could not find com.github.innovappsoft.KeyPayPaymentAndroidSDK:keypay-payment-sdk:v1.0.0`: use `v1.0.1` or newer, or use the local AAR option.
+- `KeyPayReturnActivity` appears red in Android Studio: the SDK dependency is not resolved yet. Sync Gradle and confirm the dependency is present.
+- `Cannot generate dependency accessors`: your `libs.versions.toml` has duplicate aliases. Use `keypaySdkVersion` for the version and `keypay-android-sdk` for the library.
+- `androidx.core:core-ktx:1.19.0 requires compileSdk 37 / AGP 9.1`: lower `coreKtx` to `1.17.0` when using AGP `8.13.x` and `compileSdk 36`, or update your Android Gradle plugin and compileSdk.
 
 ## Configure
 

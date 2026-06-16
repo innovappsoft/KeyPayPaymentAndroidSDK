@@ -5,5 +5,5 @@ package com.innovappsoft.keypay.payment
  */
 object KeyPaySDKInfo {
     const val name = "KeyPayPaymentAndroidSDK"
-    const val version = "1.0.0"
+    const val version = "1.0.1"
 }
