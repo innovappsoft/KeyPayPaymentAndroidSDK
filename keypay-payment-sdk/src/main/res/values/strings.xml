@@ -1,0 +1,33 @@
+<resources>
+    <string name="keypay_confirm_payment">Confirm payment</string>
+    <string name="keypay_close_symbol">×</string>
+    <string name="keypay_card_icon">123</string>
+    <string name="keypay_secure_payment">Secure payment with KeyPay</string>
+    <string name="keypay_total_to_pay">Total to pay</string>
+    <string name="keypay_amount">Amount</string>
+    <string name="keypay_fee">Fee</string>
+    <string name="keypay_no_fee">No fee</string>
+    <string name="keypay_total">Total</string>
+    <string name="keypay_payment_id">Payment ID</string>
+    <string name="keypay_waiting_id">Preparing…</string>
+    <string name="keypay_loading_payment">Preparing secure payment…</string>
+    <string name="keypay_ready_to_pay">Review the details and continue securely.</string>
+    <string name="keypay_continue">Continue</string>
+    <string name="keypay_pay">Pay with KeyPay</string>
+    <string name="keypay_close">Close</string>
+    <string name="keypay_waiting_return">Return to this app after completing the payment.</string>
+    <string name="keypay_checking_status">Checking payment status…</string>
+    <string name="keypay_status_paid">Payment completed.</string>
+    <string name="keypay_status_paid_short">Paid</string>
+    <string name="keypay_status_pending">Pending</string>
+    <string name="keypay_status_pending_long">Payment is still pending.</string>
+    <string name="keypay_status_preparing">Preparing</string>
+    <string name="keypay_status_failed">Payment failed.</string>
+    <string name="keypay_status_failed_short">Failed</string>
+    <string name="keypay_check_again">Check again</string>
+    <string name="keypay_slide_helper">Secure checkout powered by KeyPay.</string>
+    <string name="keypay_button_default">Pay with KeyPay</string>
+    <string name="keypay_error_missing_request">Missing checkout request.</string>
+    <string name="keypay_error_missing_checkout_url">PaymentIntent does not include checkout_url.</string>
+    <string name="keypay_error_button_not_ready">KeyPayCheckoutButton requires an Activity, request and callback.</string>
+</resources>

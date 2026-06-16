@@ -1,0 +1,33 @@
+<resources>
+    <string name="keypay_confirm_payment">Confirmar pago</string>
+    <string name="keypay_close_symbol">×</string>
+    <string name="keypay_card_icon">123</string>
+    <string name="keypay_secure_payment">Pago seguro con KeyPay</string>
+    <string name="keypay_total_to_pay">Total a pagar</string>
+    <string name="keypay_amount">Monto</string>
+    <string name="keypay_fee">Comisión</string>
+    <string name="keypay_no_fee">Sin comisión</string>
+    <string name="keypay_total">Total</string>
+    <string name="keypay_payment_id">ID del pago</string>
+    <string name="keypay_waiting_id">Preparando…</string>
+    <string name="keypay_loading_payment">Preparando pago seguro…</string>
+    <string name="keypay_ready_to_pay">Revisa los detalles y continúa de forma segura.</string>
+    <string name="keypay_continue">Continuar</string>
+    <string name="keypay_pay">Pagar con KeyPay</string>
+    <string name="keypay_close">Cerrar</string>
+    <string name="keypay_waiting_return">Vuelve a esta app después de completar el pago.</string>
+    <string name="keypay_checking_status">Verificando estado del pago…</string>
+    <string name="keypay_status_paid">Pago completado.</string>
+    <string name="keypay_status_paid_short">Pagado</string>
+    <string name="keypay_status_pending">Pendiente</string>
+    <string name="keypay_status_pending_long">El pago sigue pendiente.</string>
+    <string name="keypay_status_preparing">Preparando</string>
+    <string name="keypay_status_failed">El pago falló.</string>
+    <string name="keypay_status_failed_short">Fallido</string>
+    <string name="keypay_check_again">Verificar otra vez</string>
+    <string name="keypay_slide_helper">Checkout seguro procesado por KeyPay.</string>
+    <string name="keypay_button_default">Pagar con KeyPay</string>
+    <string name="keypay_error_missing_request">Falta la solicitud de pago.</string>
+    <string name="keypay_error_missing_checkout_url">El PaymentIntent no incluye checkout_url.</string>
+    <string name="keypay_error_button_not_ready">KeyPayCheckoutButton necesita Activity, request y callback.</string>
+</resources>

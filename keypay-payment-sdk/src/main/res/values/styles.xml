@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.KeyPay.Payment" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#000000</item>
+    </style>
+</resources>

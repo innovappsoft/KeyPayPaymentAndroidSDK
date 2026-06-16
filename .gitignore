@@ -1,0 +1,18 @@
+*.iml
+.gradle/
+.idea/
+.DS_Store
+local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+**/build/
+
+# Android Studio generated files
+app/release/
+
+# Kotlin/Java
+*.class
+
+# Logs
+*.log
