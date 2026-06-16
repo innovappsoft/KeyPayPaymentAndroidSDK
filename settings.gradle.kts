@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KeyPayPaymentAndroidSDK"
-include(":app")
+include(":sample-app")
 include(":keypay-payment-sdk")

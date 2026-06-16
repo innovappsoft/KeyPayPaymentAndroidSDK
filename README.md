@@ -195,12 +195,12 @@ Your backend returns the KeyPay PaymentIntent envelope:
 ## Modules
 
 - `keypay-payment-sdk`: reusable Android SDK module.
-- `app`: local sample app for testing integration.
+- `sample-app`: local sample app for testing integration.
 
 ## Build
 
 This project requires Java 11 or newer. If your terminal uses Java 8, run with Android Studio's JBR:
 
 ```bash
-JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew :keypay-payment-sdk:assembleDebug :app:assembleDebug
+JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew :keypay-payment-sdk:assembleDebug :sample-app:assembleDebug
 ```

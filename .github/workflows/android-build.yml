@@ -24,4 +24,4 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build SDK and sample
-        run: ./gradlew :keypay-payment-sdk:assembleDebug :app:assembleDebug
+        run: ./gradlew :keypay-payment-sdk:assembleDebug :sample-app:assembleDebug

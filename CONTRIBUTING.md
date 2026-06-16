@@ -9,5 +9,5 @@ Thanks for helping improve KeyPay Payment Android SDK.
 - Run the Android build before opening a pull request.
 
 ```bash
-JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew :keypay-payment-sdk:assembleDebug :app:assembleDebug
+JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew :keypay-payment-sdk:assembleDebug :sample-app:assembleDebug
 ```
